@@ -61,6 +61,13 @@
 
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/Moonaz023/stock-proto</url>
+		</repository>
+	</distributionManagement>
 	<build>
 		<extensions>
 			<!-- OS Maven Plugin to resolve os.detected.classifier -->

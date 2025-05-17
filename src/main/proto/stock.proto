@@ -3,6 +3,8 @@ syntax = "proto3";
 option java_multiple_files = true;
 package com.m23itsolution.stock;
 
+import "grpc/channelz/v1/channelz.proto";
+
 message CheckStockRequest {
   string productId = 1;
   int32 quantity = 2;
@@ -29,8 +31,10 @@ message GetStockResponse {
   string productId = 1;
   int32 quantity = 2;
 }
+
 service StockService {
   rpc CheckStock (CheckStockRequest) returns (CheckStockResponse);
   rpc UpdateStock (UpdateStockRequest) returns (UpdateStockResponse);
   rpc GetStock (GetStockRequest) returns (GetStockResponse);
+  rpc AddToStock(GetStockRequest) returns (GetStockResponse);
 }
